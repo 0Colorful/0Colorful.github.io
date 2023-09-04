@@ -27,12 +27,13 @@
 <meta property="og:site_name" content="( •̀ ω •́ )✧">
 <meta property="og:description" content="摘要：软件测试的面试题总结">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/assert/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.assert/image-20230831185201158.png">
+<meta property="og:image" content="http://example.com/assets/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.assets/image-20230831185201158.png">
+<meta property="og:image" content="http://example.com/assets/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.assets/image-20230904184109313.png">
 <meta property="article:published_time" content="2023-09-02T09:17:13.000Z">
-<meta property="article:modified_time" content="2023-09-04T02:49:36.605Z">
+<meta property="article:modified_time" content="2023-09-04T11:16:00.568Z">
 <meta property="article:author" content="张哈哈">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/assert/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.assert/image-20230831185201158.png">
+<meta name="twitter:image" content="http://example.com/assets/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.assets/image-20230831185201158.png">
 
 <link rel="canonical" href="http://example.com/2023/09/02/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/">
 
@@ -183,7 +184,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-09-04 10:49:36" itemprop="dateModified" datetime="2023-09-04T10:49:36+08:00">2023-09-04</time>
+                <time title="修改时间：2023-09-04 19:16:00" itemprop="dateModified" datetime="2023-09-04T19:16:00+08:00">2023-09-04</time>
               </span>
 
           
@@ -228,7 +229,7 @@
 <li>   冒烟ok后，就通知小组内的成员开始正式测试了 </li>
 <li>   首轮执行全量测试，在测试过程中会测出问题，就提单到缺陷库 </li>
 <li>   开发就会对问题单进行修改，修改完毕后，研发会再次打个测试包到测试组 </li>
-<li>   再进行回归测试（这个时间会比前一轮少个3个天）</li>
+<li>   再进行回归测试（这个时间会比前一轮少个3天）</li>
 <li>   经过几轮这样的测试后产品稳定了，就进行灰度发布（选取某个尾号或者某个地区推送）<br>（灰度发布用的是少量的生产环境，也是对主流程跑一遍，测试一般不到1天） </li>
 <li>   灰度发布ok后，再开始全量发布（全量发布时，仍然需要对主流程冒烟一次）</li>
 <li>   最后就写一个测试报告</li>
@@ -261,6 +262,24 @@
 <li><p>工作交付件（交付清单包含哪些？以及完成清单的日期-清单包括：用例、计划本身）</p>
 </li>
 </ol>
+<h2 id="测试报告格式"><a href="#测试报告格式" class="headerlink" title="测试报告格式"></a>测试报告格式</h2><ol>
+<li><p>简介（产品名称、版本号、参考文档）</p>
+</li>
+<li><p>测试资源描述（测试地点、测试人物，软件测试环境、硬件测试环境，测试组网图，测试设备）</p>
+</li>
+<li><p>测试时间统计（测试任务的时间， 这里面的时间是详细的每个版本的细分时间统计）</p>
+</li>
+<li><p>测试用例统计（测试用例执行情况分析，哪些用例通过了，哪些失败了发现问题了）</p>
+</li>
+<li><p>测试缺陷分析（缺陷分布情况、严重程度、遗留bug分析）</p>
+</li>
+<li><p>测试版本质量分析 （测试版本的质量怎么样，描述一下，能不能发布？）</p>
+</li>
+<li><p>测试活动评估（就是测试活动及写测试用例，脚本方面的质量的方面怎么样描述一下）</p>
+</li>
+</ol>
+<h2 id="bug组成部分，bug包含哪些内容？bug要素"><a href="#bug组成部分，bug包含哪些内容？bug要素" class="headerlink" title="bug组成部分，bug包含哪些内容？bug要素"></a>bug组成部分，bug包含哪些内容？bug要素</h2><p>bug所属产品、模块、项目名称、测试环境、重现概率、影响版本、bug责任人、bug类型、bug标题、严重程度、bug状态、优先级、重现步骤、抄送给谁、日志附件等等</p>
+<h2 id="Bug生命周期-bug-流程-bug扭转流程？"><a href="#Bug生命周期-bug-流程-bug扭转流程？" class="headerlink" title="Bug生命周期 bug 流程 bug扭转流程？"></a>Bug生命周期 bug 流程 bug扭转流程？</h2><p>首先发现bug、再定位分析bug、提交bug、分配bug、修改bug、回归验证bug、再后关闭bug</p>
 <h2 id="测试各个阶段你做的事情是什么"><a href="#测试各个阶段你做的事情是什么" class="headerlink" title="测试各个阶段你做的事情是什么"></a>测试各个阶段你做的事情是什么</h2><p>需求分析阶段：进行需求评审,并提取测试点<br>写测试计划：主要的产出测试计划文档+评审<br>写测试用例阶段：就是编写测试用例了+评审<br>测试设计阶段：编写一下测试代码（接口、性能、自动化测试）<br>转测试阶段：安装测试包，部署环境<br>执行测试：执行测试用例，提出问题单，定位，分析，跟踪问题<br>上线前阶段：进行灰度发布、和全量发布，这段时间，测试组会全员值班<br>测试结束：产出测试报告文档和测试总结文档<br>运营阶段：负责生产问题的维护和跟踪解决，以及后续的版本测试。</p>
 <h2 id="什么白盒、黑盒测试？"><a href="#什么白盒、黑盒测试？" class="headerlink" title="什么白盒、黑盒测试？"></a>什么白盒、黑盒测试？</h2><p>白盒测试：又称结构测试，把程序看作是一个透明的盒子，关心软件内部设计和程序实现，对所有逻辑路径进行测试，主要测试依据是模块的设计文档<br>白盒测试的测试方法：有代码检查法、路径测试法等</p>
 <p>黑盒测试：也称功能测试后数据驱动测试，把程序看作一个不能打开的黑盒子，不关心软件内部，只关心输入输出，在已知产品应具有的功能的条件下，主要针对软件界面和软件功能进行测试。</p>
@@ -342,10 +361,11 @@
 </tbody></table>
 <h3 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h3><p>为什么冲突？<br>同一个远程文件，两个人分别pull原始文件下来后，两个人分别对文件进行了不同的修改，再push上传就会冲突，git就不知道使用那个版本为最终版本<br>（2个人修改的话，会存在3个版本，原始版本，A同学版本，B同学版本）</p>
 <p>如何解决？<br>开发之间协商解决就好了。<br>比如先让A同学push上传，然后再让B同学pull拉下来，在A的修改版本的基础上再改好，再push上传就ok了</p>
-<h1 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h1><p>Fiddler 、 Charles 抓高层协议包 http\https</p>
+<h1 id="Fiddler-Charles"><a href="#Fiddler-Charles" class="headerlink" title="Fiddler+Charles"></a>Fiddler+Charles</h1><p>Fiddler 、 Charles 抓高层协议包 http\https</p>
 <p>Wireshark 能抓底层协议包 udp\tcp，无法破解https</p>
 <p>三次握手</p>
-<p><img src="/assert/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.assert/image-20230831185201158.png"></p>
+<img src="/assets/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.assets/image-20230831185201158.png"/>
+
 <p>网络上任意一个资源都有一个独立的URL地址，资源就是：文件，视频，图片。。。等都属于是资源文件</p>
 <p>端口：指的就是某个进程&#x2F;一台计算机中的<strong>特定进程</strong>所提供的服务</p>
 <p>fiddler不抓缓存</p>
@@ -393,12 +413,15 @@
 <p>局部断点命令：bpu 断点地址（请求前） 、bpafter 断点地址（响应后）</p>
 <h4 id="怎么断点的？"><a href="#怎么断点的？" class="headerlink" title="怎么断点的？"></a>怎么断点的？</h4><p>请求前断点：<br>我举个例子，比如断点一个点赞的请求信息吧(比如点赞、评论、登录、个人信息等)，先打开视频观看页面，然后在Fiddler的“自动断点菜单”中选择“请求前断点”，再做[点赞]操作(比如什么要跟随改变)，fiddler就会断点拦截[点赞]请求，包括请求方式、编码格式等信息，断点拦截是可以修改这些信息的，再修改这个请求的任何内容，包括请求方式、编码格式、入参等等，都可以改的，改了后，就更改了原本的请求内容了，再放行这个请求，再观看服务端对于修改过的请求的处理结果的情况，是否正确？是否和预期一致。<br>响应后断点：<br>比如断点一个点赞后的响应信息 (比如点赞、评论、登录、个人信息等)，先进入点赞窗口，然后在Fiddler中选择“响应后断点”，再[点赞]，fiddler会断点拦截[点赞]后的响应信息，你再修改这个响应信息，再放行，然后观察客户端对于修改后的响应的处理情况是否符合预期。</p>
 <blockquote>
-<p>请求前断点：比如我断点一个评论的请求信息，先要打开fiddler的”请求前断点“(before requests)，再在评论界面进行评论操作，fiddler会拦截评论的请求，包括请求方式、编码格式等信息，断点拦截是可以修改这些信息的，再修改这个请求的任何内容，包括请求方式、编码格式、入参等等，都可以改的，改了后，就更改了原本的请求内容了，再放行这个请求，再观看服务端对于修改过的请求的处理结果的情况，是否正确？是否和预期一致。</p>
+<p>请求前断点：比如我断点一个评论的请求信息，先打开评论页面，打开fiddler的”请求前断点“(before requests)，再在评论界面进行评论操作，fiddler会拦截评论的请求，包括请求方式、编码格式等信息，断点拦截是可以修改这些信息的，再修改这个请求的任何内容，包括请求方式、编码格式、入参等等，都可以改的，改了后，就更改了原本的请求内容了，再放行这个请求，再观察<strong>服务端</strong>对于修改过的请求的处理结果的情况，是否正确？是否和预期一致。</p>
+<p>比如断点一个评论后的响应信息 ，先进入评论页面，然后在Fiddler中选择“响应后断点”，再评论，fiddler会断点拦截评论后的响应信息，你再修改这个响应信息，再放行，然后观察<strong>客户端</strong>对于修改后的响应的处理情况是否符合预期。</p>
 </blockquote>
 <h4 id="重放攻击"><a href="#重放攻击" class="headerlink" title="重放攻击"></a>重放攻击</h4><p>重放攻击是什么呢？（重念虫）<br>利用fiddler重定向功能访问本地数据，就是把你的请求通过抓包工具抓到后，再原封不动地再发送一次，两次.稍微修改了参数的值再发n次。重放攻击是黑客常用的攻击方式之一。</p>
 <p><strong>操作</strong></p>
 <p>Reissue Requests: 重放选中的请求<br>Reissue Unconditionally: 无茶件重发选中的请求<br>ReissueandEdit:重发并编辑，会打开一个加了断点的清求，可以进行请求和响应数据的修改<br>Reissue and Verify:重新发送请求，检查响应，如果响应与上一次请求一样，则变成绿色<br>Reissue Sequentially: 依次重放，打开一个数里设置界面，标识需要重发多少次请求<br>Reissue from Composer: 在Composer中编辑该请求</p>
-<h3 id="Mock测试"><a href="#Mock测试" class="headerlink" title="Mock测试"></a>Mock测试</h3><p><strong>mock的概念：</strong><br>mock测试其根本任务就是能够模拟后端服务器接口数据，软件接口测试过程中，经常会遇后端接口还没有开发完成，领导就让先介入测试，然后缩短项目时间，有的人肯定会懵，接口还没开发好，怎么介入测试，其实这就涉及到了我们要说的mock了，在不需要后端服务器的情况下（因为后端还没开发完毕），通过接口测试工具模拟后端返回，从而判断前端是否能正确处理。比如前端工程师自测试时,可以将后端整个服务都 mock 掉,这其实等同于将后端的所有接口都 mock，某些场景很难去模拟—比如超时、未知错误或者、或者调用第三方接口，（和第三方接口还没协调好）</p>
+<h3 id="Mock测试"><a href="#Mock测试" class="headerlink" title="Mock测试"></a>Mock测试</h3><p>模拟服务端返回，检查前端（对服务端返回的数据）的处理是否正确</p>
+<p>设置规则，保持，前端发起请求，查看处理结果</p>
+<p><strong>mock的概念：</strong><br>mock测试其根本任务就是能够模拟后端服务器接口数据，软件接口测试过程中，经常会遇后端接口还没有开发完成，领导就让先介入测试，然后缩短项目时间，有的人肯定会懵，接口还没开发好，怎么介入测试，其实这就涉及到了我们要说的mock了，在不需要后端服务器的情况下（因为后端还没开发完毕），通过接口测试工具模拟后端返回，从而判断前端是否能正确处理。比如前端工程师自测试时,可以将后端整个服务都 mock 掉,这其实等同于将后端的所有接口都 mock，某些场景很难去模拟—比如超时、未知错误或者、或者调用第三方接口，（和第三方接口还没协调好）</p>
 <blockquote>
 <p><strong>一个项目有哪些人？</strong><br>开发组（前端开发工程师–UI界面、后端开发工程师–写接口-逻辑）<br>产品经理<br>测试组<br>UI组（2-3个）（主要开发素材–图片，各类，贴图，动画）</p>
 </blockquote>
@@ -409,6 +432,78 @@
 <li>   那么当你发这个请求时，就会返回这个指定的响应内容。</li>
 </ol>
 <h3 id="fiddler怎么延迟请求，延迟响应？（不是重点）"><a href="#fiddler怎么延迟请求，延迟响应？（不是重点）" class="headerlink" title="fiddler怎么延迟请求，延迟响应？（不是重点）"></a>fiddler怎么延迟请求，延迟响应？（不是重点）</h3><p>在fiddler的【自动回复器】里面，新建一个规则，勾选【启用延迟】<br>延迟请求：就在匹配规则列表中，选择一个规则，选择delay地雷,再填入一个延迟时间（比如延迟3000毫秒），然后点保持，那么你发送的请求就会被延迟这个时间发送（只是延迟请求作用）。<br>延迟响应：就在匹配规则列表中，选择一个规则，右键点击【设置延迟】，然后设置一个对应规则的延迟时间，再保存，那么你发起请求后，响应就会延迟回复。</p>
+<h3 id="urlreplace"><a href="#urlreplace" class="headerlink" title="urlreplace"></a>urlreplace</h3><p>urlreplace 替换请求 ip 地址</p>
+<p>在下面的编辑中输入urlreplace 原地址 新地址</p>
+<h3 id="弱网测试"><a href="#弱网测试" class="headerlink" title="弱网测试"></a>弱网测试</h3><p>测试应用在弱网下的体验，以及功能是否正常，是否出现崩溃等现象</p>
+<p>1ms延迟：1kb&#x2F;ms &#x3D; 1Mb&#x2F;s</p>
+<p>网速 &#x3D; 1000&#x2F;毫秒</p>
+<p>每上传下载1KB 延迟 多少毫秒</p>
+<p>弱网情况下只要200KB&#x2F;S的下行速度，那么不能填1毫秒，因为1毫秒约等于1MB&#x2F;S,1M是200KB的5倍,也就是快了5倍，因为这个数字是越小越快，越大越慢，是反向倍数的，所以这个数字要填1ms <em>(1MB&#x2F;200KB)&#x3D; 1ms</em>5 &#x3D;5ms</p>
+<p>200KB 的速度的延迟时间是5ms<br>100KB的速度延迟时间是 10ms</p>
+<p>这个是延迟时间 和 速度是成反比的。时间越小，速度越快，时间越大，速度越慢</p>
+<h4 id="Fiddler-如何限速？-弱网-（rules菜单下有个模拟限速菜单）"><a href="#Fiddler-如何限速？-弱网-（rules菜单下有个模拟限速菜单）" class="headerlink" title="Fiddler 如何限速？ 弱网 （rules菜单下有个模拟限速菜单）"></a>Fiddler 如何限速？ 弱网 （rules菜单下有个模拟限速菜单）</h4><ol>
+<li>打开fiddler编写脚本窗口</li>
+<li>在 fiddler script 脚本文件的 “OnBeforeRequest” 函数里面，修改网络上传、下载的延时参数。</li>
+<li>修改参数后，保存一下脚本，</li>
+<li>再勾选一下 “Simulate Modem Speeds” 菜单</li>
+<li>再之后发起的请求就会被延迟，也就是被限速了</li>
+</ol>
+<h3 id="手机抓包"><a href="#手机抓包" class="headerlink" title="手机抓包"></a>手机抓包</h3><blockquote>
+<p>用户代理（User Agent，简称 UA），是一个特殊字符串头，使得服务器能够识别客户使用的操作系统及版本、CPU 类型、浏览器及版本、浏览器渲染引擎、浏览器语言、浏览器插件等。</p>
+</blockquote>
+<p>抓取移动端信息：<br>将移动数据 引入到fiddler所在的设备上，经过fiddler发送出去，这样才可能抓包移动端数据</p>
+<h3 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h3><p>加密和解密使用同一套秘钥，<strong>对称加密</strong></p>
+<p>加密是一个秘钥（公钥），解密又是另外一个秘钥（私钥），它们是一一对应的，叫<strong>非对称加密</strong></p>
+<p>CA认证机构，专门制作公钥和私钥的</p>
+<p>凡是拦截https的消息，客户端都要安装一个证书（公钥）</p>
+<h2 id="Charles"><a href="#Charles" class="headerlink" title="Charles"></a>Charles</h2><blockquote>
+<p>charles 可以断点、弱网、mock、抓包分析、重放攻击（装证书）</p>
+</blockquote>
+<h3 id="弱网测试-1"><a href="#弱网测试-1" class="headerlink" title="弱网测试"></a>弱网测试</h3><p>配置参数解析（Throttle Setting）：</p>
+<ul>
+<li>Bandwidth：带宽，即上行、下行数据传输速度</li>
+<li>utilisation ： 带宽利用率是总带宽的百分比，填入100%</li>
+<li>round-trip latency ：请求往返延迟，往返延迟测量客户端和远程服务器之间的第一次往返通信的毫秒延迟。它用于客户端向服务器和服务器向客户端的每次请求，单位是ms。</li>
+<li>MTU ：最大传输单元，即TCP包的最大size，可以更真实模拟TCP层，每次传输的分包情况。</li>
+<li>Releability：连接的可靠性。这里指的是10kb的可靠率。用于模拟网络不稳定，可靠性是衡量连接完全失败的可能性。这是非常有用的模拟不可靠的网络条件。可靠性是指定为成功发射10kib消息的可能性，所以，值为50%意味着所有10kib传输一半会成功。</li>
+<li>Stability ：连接稳定性，也会影响带宽可用性。用于模拟移动网络，移动网络连接一般不可靠</li>
+<li>unstable quality range（不稳定质量范围）此处设置主要针对于Stability中设置中的范围</li>
+</ul>
+<img src="/assets/面试题总结.assets/image-20230904184109313.png" alt="image-20230904184109313" style="zoom: 50%;"/>
+
+<h2 id="弱网测试相关"><a href="#弱网测试相关" class="headerlink" title="弱网测试相关"></a>弱网测试相关</h2><p>弱网除了下载速度之外，还有其他参数 <strong>网络延迟、抖动、丢包率</strong> 等也会影响到网络的稳定性和使用体验。</p>
+<h3 id="fiddler，charles弱网的缺点"><a href="#fiddler，charles弱网的缺点" class="headerlink" title="fiddler，charles弱网的缺点"></a>fiddler，charles弱网的缺点</h3><ol>
+<li>需要额外的PC或者服务器，弱网环境构建成本高；</li>
+<li>需要安装、部署额外的工具，并且弱网络环境需要在PC上或者Web上进行配置，使用成本高；</li>
+<li>弱网络环境功能并不完善，比如Fiddler不支持丢包、抖动等弱网环境；</li>
+</ol>
+<blockquote>
+<p>ping值 就是延迟时间</p>
+<p>网络抖动值：指的是网络通信中延迟最大值与最小值之差</p>
+<p>丢包率：是指测试中所丢失数据包数量和发送数据包的比率</p>
+<p>下行设置为250KB<br>上行是下行的一半</p>
+<p>抖动高于50ms, 丢包&gt;4%就是弱网下的表现</p>
+</blockquote>
+<h3 id="弱网测试具体的速度是多少？"><a href="#弱网测试具体的速度是多少？" class="headerlink" title="弱网测试具体的速度是多少？"></a>弱网测试具体的速度是多少？</h3><p>大概是每秒字节数在200KB&#x2F;s以下（一般是下行速度限制在200KB以下，上行控制在100KB）</p>
+<h3 id="弱网场景是怎么考虑的？-或者你怎么设计弱网测试？"><a href="#弱网场景是怎么考虑的？-或者你怎么设计弱网测试？" class="headerlink" title="弱网场景是怎么考虑的？ 或者你怎么设计弱网测试？"></a>弱网场景是怎么考虑的？ 或者你怎么设计弱网测试？</h3><p>我们弱网测试主要模拟2G和3G场景，这些场景也就是进入电梯、地铁、高铁、车库等场景、网络切换，一般就是2G,3G场景，检查程序是否能正常使用，保证用户的体验<br>主要考虑4个场景：<br>模拟2G有1个场景：下行20KB&#x2F;s（2G最大下行速度就是20KB）<br>模拟3G有3个场景：下行65KB&#x2F;s、125KB&#x2F;s、200KB&#x2F;s、300KB&#x2F;s（游戏类）</p>
+<h3 id="弱网的其他参数怎么设置？"><a href="#弱网的其他参数怎么设置？" class="headerlink" title="弱网的其他参数怎么设置？"></a>弱网的其他参数怎么设置？</h3><p>我们除了设置上下行速度外，还设置延迟时间、丢包率、网络抖动等参数</p>
+<p>延迟时间：ping值高于100毫秒不合格，因此我们模拟是在 80 ~ 90ms </p>
+<p>丢包率：高于5%不合格，因此我们模拟丢包率为 3% ~ 4% 之间</p>
+<p>网络抖动：高于50ms不合格，我们模拟为 30 ~ 40 毫秒左右</p>
+<h3 id="为什么是200KB？而不是其他的速度？"><a href="#为什么是200KB？而不是其他的速度？" class="headerlink" title="为什么是200KB？而不是其他的速度？"></a>为什么是200KB？而不是其他的速度？</h3><p>根据我们的测试经验，每秒字节数在200KB以上，大多数应用就能流畅的使用，所以我们测试部将弱网定义在200KB每秒以下</p>
+<h3 id="弱网下主要检查哪些方面？"><a href="#弱网下主要检查哪些方面？" class="headerlink" title="弱网下主要检查哪些方面？"></a>弱网下主要检查哪些方面？</h3><ol>
+<li>首先是前端用户体验：客户端和服务端的交互体验，比如首屏的启动时间、或者页面的响应时间等是否可以接受，页面的渲染是否及时等？</li>
+<li>再考虑不同网络的弱网，比如弱网下的数据读取是否正常？</li>
+<li>弱网下的基本功能是否正常，主要关注是否卡顿、崩溃、无响应、闪退、数据是否能正常传输、页面显示是否异常？</li>
+<li>弱网下的切换、支付等是否正常</li>
+</ol>
+<h3 id="Qnet限速工具怎么用的"><a href="#Qnet限速工具怎么用的" class="headerlink" title="Qnet限速工具怎么用的"></a>Qnet限速工具怎么用的</h3><ol>
+<li>先进入qnet界面，新增一个限速模板，可以起个名字</li>
+<li>再选择【网络带宽】，设置一下上行下行速度</li>
+<li>设置完了点一下保存，该模版就显示在工作台的列表中了</li>
+<li>选择你设置的模版，模版名字变成蓝色状态，就是你选中了</li>
+<li>最后选需要限速的APP应用，点启动，就可以看到对这个app限速了</li>
+</ol>
 
     </div>
 
@@ -486,7 +581,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux"><span class="nav-number">1.</span> <span class="nav-text">Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4%E5%A6%82%E4%B8%8B-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">Linux服务搭建步骤如下 (微服务模式)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA"><span class="nav-number">2.</span> <span class="nav-text">测试理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B-%E9%A1%B9%E7%9B%AE%E6%B5%81%E7%A8%8B"><span class="nav-number">2.1.</span> <span class="nav-text">测试流程  项目流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92%E6%A0%BC%E5%BC%8F-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">2.2.</span> <span class="nav-text">测试计划格式 是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E5%90%84%E4%B8%AA%E9%98%B6%E6%AE%B5%E4%BD%A0%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">2.3.</span> <span class="nav-text">测试各个阶段你做的事情是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E7%99%BD%E7%9B%92%E3%80%81%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95%EF%BC%9F"><span class="nav-number">2.4.</span> <span class="nav-text">什么白盒、黑盒测试？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83%E7%AD%96%E7%95%A5%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">2.5.</span> <span class="nav-text">灰度发布策略是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E7%BA%BF%E6%A0%87%E5%87%86"><span class="nav-number">2.6.</span> <span class="nav-text">上线标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E5%AE%A1%E4%BA%BA%E6%9C%89%E5%93%AA%E4%BA%9B-%EF%BC%9F"><span class="nav-number">2.7.</span> <span class="nav-text">评审人有哪些 ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E8%AF%84%E5%AE%A1%EF%BC%8C%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90-%E6%B2%A1%E6%9C%89%E5%8F%91%E7%8E%B0%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="nav-number">2.8.</span> <span class="nav-text">需求评审，需求分析 没有发现什么问题？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C"><span class="nav-number">3.</span> <span class="nav-text">网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%8F%8F%E8%BF%B0%E4%B8%80%E4%B8%8B%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9A%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%EF%BC%9F"><span class="nav-number">3.1.</span> <span class="nav-text">请描述一下客户端和服务端的处理过程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E8%83%8C%E8%BF%99%E4%B8%AA%EF%BC%89%E5%89%8D%E7%AB%AF%E8%AF%B7%E6%B1%82%E5%88%B0%E5%90%8E%E7%AB%AF%E7%9A%84%E5%A4%84%E7%90%86%E7%9A%84%E8%AF%A6%E7%BB%86%E8%BF%87%E7%A8%8B%EF%BC%9F"><span class="nav-number">3.2.</span> <span class="nav-text">（背这个）前端请求到后端的处理的详细过程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F"><span class="nav-number">3.3.</span> <span class="nav-text">报文格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%8C%85%E5%90%AB%E5%93%AA%E4%BA%9B%E5%86%85%E5%AE%B9%EF%BC%9F"><span class="nav-number">3.4.</span> <span class="nav-text">HTTP请求头包含哪些内容？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookies"><span class="nav-number">3.4.1.</span> <span class="nav-text">Cookies</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-number">4.</span> <span class="nav-text">项目管理工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">4.1.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">4.1.1.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81"><span class="nav-number">4.1.2.</span> <span class="nav-text">解决冲突</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%93%E5%8C%85"><span class="nav-number">5.</span> <span class="nav-text">抓包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%EF%BC%8C%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">服务无法连接，排查方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fiddler%E7%9B%B8%E5%85%B3"><span class="nav-number">5.2.</span> <span class="nav-text">Fiddler相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BC%9A%E7%94%A8%E5%88%B0%E4%BD%BF%E7%94%A8Fiddler"><span class="nav-number">5.2.1.</span> <span class="nav-text">什么时候会用到使用Fiddler?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fiddler%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">5.2.2.</span> <span class="nav-text">Fiddler的原理是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E6%8A%93%E5%8F%96HTTPS%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%BD%91%E7%AB%99%EF%BC%9F"><span class="nav-number">5.2.3.</span> <span class="nav-text">怎么抓取HTTPS协议的网站？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fiddler%E5%93%AA%E9%87%8C%E7%9C%8B%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94%EF%BC%9F"><span class="nav-number">5.2.4.</span> <span class="nav-text">Fiddler哪里看请求和响应？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fiddler%E6%80%8E%E4%B9%88%E6%8A%93%E5%8C%85%EF%BC%8CFiddler%E6%80%8E%E4%B9%88%E7%94%A8%E7%9A%84%EF%BC%9F"><span class="nav-number">5.2.5.</span> <span class="nav-text">Fiddler怎么抓包，Fiddler怎么用的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%AD%E7%82%B9%E6%8B%A6%E6%88%AA"><span class="nav-number">5.2.6.</span> <span class="nav-text">断点拦截</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E6%96%AD%E7%82%B9%E7%9A%84%EF%BC%9F"><span class="nav-number">5.2.6.1.</span> <span class="nav-text">怎么断点的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E6%94%BE%E6%94%BB%E5%87%BB"><span class="nav-number">5.2.6.2.</span> <span class="nav-text">重放攻击</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mock%E6%B5%8B%E8%AF%95"><span class="nav-number">5.2.7.</span> <span class="nav-text">Mock测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Mock%E6%B5%8B%E8%AF%95%E6%80%8E%E4%B9%88%E5%81%9A%E7%9A%84%EF%BC%9F"><span class="nav-number">5.2.7.1.</span> <span class="nav-text">Mock测试怎么做的？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fiddler%E6%80%8E%E4%B9%88%E5%BB%B6%E8%BF%9F%E8%AF%B7%E6%B1%82%EF%BC%8C%E5%BB%B6%E8%BF%9F%E5%93%8D%E5%BA%94%EF%BC%9F%EF%BC%88%E4%B8%8D%E6%98%AF%E9%87%8D%E7%82%B9%EF%BC%89"><span class="nav-number">5.2.8.</span> <span class="nav-text">fiddler怎么延迟请求，延迟响应？（不是重点）</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux"><span class="nav-number">1.</span> <span class="nav-text">Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4%E5%A6%82%E4%B8%8B-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">Linux服务搭建步骤如下 (微服务模式)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA"><span class="nav-number">2.</span> <span class="nav-text">测试理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B-%E9%A1%B9%E7%9B%AE%E6%B5%81%E7%A8%8B"><span class="nav-number">2.1.</span> <span class="nav-text">测试流程  项目流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92%E6%A0%BC%E5%BC%8F-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">2.2.</span> <span class="nav-text">测试计划格式 是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">测试报告格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bug%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%EF%BC%8Cbug%E5%8C%85%E5%90%AB%E5%93%AA%E4%BA%9B%E5%86%85%E5%AE%B9%EF%BC%9Fbug%E8%A6%81%E7%B4%A0"><span class="nav-number">2.4.</span> <span class="nav-text">bug组成部分，bug包含哪些内容？bug要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bug%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-bug-%E6%B5%81%E7%A8%8B-bug%E6%89%AD%E8%BD%AC%E6%B5%81%E7%A8%8B%EF%BC%9F"><span class="nav-number">2.5.</span> <span class="nav-text">Bug生命周期 bug 流程 bug扭转流程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E5%90%84%E4%B8%AA%E9%98%B6%E6%AE%B5%E4%BD%A0%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">2.6.</span> <span class="nav-text">测试各个阶段你做的事情是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E7%99%BD%E7%9B%92%E3%80%81%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95%EF%BC%9F"><span class="nav-number">2.7.</span> <span class="nav-text">什么白盒、黑盒测试？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83%E7%AD%96%E7%95%A5%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">2.8.</span> <span class="nav-text">灰度发布策略是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E7%BA%BF%E6%A0%87%E5%87%86"><span class="nav-number">2.9.</span> <span class="nav-text">上线标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E5%AE%A1%E4%BA%BA%E6%9C%89%E5%93%AA%E4%BA%9B-%EF%BC%9F"><span class="nav-number">2.10.</span> <span class="nav-text">评审人有哪些 ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E8%AF%84%E5%AE%A1%EF%BC%8C%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90-%E6%B2%A1%E6%9C%89%E5%8F%91%E7%8E%B0%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="nav-number">2.11.</span> <span class="nav-text">需求评审，需求分析 没有发现什么问题？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C"><span class="nav-number">3.</span> <span class="nav-text">网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%8F%8F%E8%BF%B0%E4%B8%80%E4%B8%8B%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9A%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%EF%BC%9F"><span class="nav-number">3.1.</span> <span class="nav-text">请描述一下客户端和服务端的处理过程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E8%83%8C%E8%BF%99%E4%B8%AA%EF%BC%89%E5%89%8D%E7%AB%AF%E8%AF%B7%E6%B1%82%E5%88%B0%E5%90%8E%E7%AB%AF%E7%9A%84%E5%A4%84%E7%90%86%E7%9A%84%E8%AF%A6%E7%BB%86%E8%BF%87%E7%A8%8B%EF%BC%9F"><span class="nav-number">3.2.</span> <span class="nav-text">（背这个）前端请求到后端的处理的详细过程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F"><span class="nav-number">3.3.</span> <span class="nav-text">报文格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%8C%85%E5%90%AB%E5%93%AA%E4%BA%9B%E5%86%85%E5%AE%B9%EF%BC%9F"><span class="nav-number">3.4.</span> <span class="nav-text">HTTP请求头包含哪些内容？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookies"><span class="nav-number">3.4.1.</span> <span class="nav-text">Cookies</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-number">4.</span> <span class="nav-text">项目管理工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">4.1.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">4.1.1.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81"><span class="nav-number">4.1.2.</span> <span class="nav-text">解决冲突</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fiddler-Charles"><span class="nav-number">5.</span> <span class="nav-text">Fiddler+Charles</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%EF%BC%8C%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">服务无法连接，排查方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fiddler%E7%9B%B8%E5%85%B3"><span class="nav-number">5.2.</span> <span class="nav-text">Fiddler相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BC%9A%E7%94%A8%E5%88%B0%E4%BD%BF%E7%94%A8Fiddler"><span class="nav-number">5.2.1.</span> <span class="nav-text">什么时候会用到使用Fiddler?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fiddler%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">5.2.2.</span> <span class="nav-text">Fiddler的原理是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E6%8A%93%E5%8F%96HTTPS%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%BD%91%E7%AB%99%EF%BC%9F"><span class="nav-number">5.2.3.</span> <span class="nav-text">怎么抓取HTTPS协议的网站？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fiddler%E5%93%AA%E9%87%8C%E7%9C%8B%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94%EF%BC%9F"><span class="nav-number">5.2.4.</span> <span class="nav-text">Fiddler哪里看请求和响应？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fiddler%E6%80%8E%E4%B9%88%E6%8A%93%E5%8C%85%EF%BC%8CFiddler%E6%80%8E%E4%B9%88%E7%94%A8%E7%9A%84%EF%BC%9F"><span class="nav-number">5.2.5.</span> <span class="nav-text">Fiddler怎么抓包，Fiddler怎么用的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%AD%E7%82%B9%E6%8B%A6%E6%88%AA"><span class="nav-number">5.2.6.</span> <span class="nav-text">断点拦截</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E6%96%AD%E7%82%B9%E7%9A%84%EF%BC%9F"><span class="nav-number">5.2.6.1.</span> <span class="nav-text">怎么断点的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E6%94%BE%E6%94%BB%E5%87%BB"><span class="nav-number">5.2.6.2.</span> <span class="nav-text">重放攻击</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mock%E6%B5%8B%E8%AF%95"><span class="nav-number">5.2.7.</span> <span class="nav-text">Mock测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Mock%E6%B5%8B%E8%AF%95%E6%80%8E%E4%B9%88%E5%81%9A%E7%9A%84%EF%BC%9F"><span class="nav-number">5.2.7.1.</span> <span class="nav-text">Mock测试怎么做的？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fiddler%E6%80%8E%E4%B9%88%E5%BB%B6%E8%BF%9F%E8%AF%B7%E6%B1%82%EF%BC%8C%E5%BB%B6%E8%BF%9F%E5%93%8D%E5%BA%94%EF%BC%9F%EF%BC%88%E4%B8%8D%E6%98%AF%E9%87%8D%E7%82%B9%EF%BC%89"><span class="nav-number">5.2.8.</span> <span class="nav-text">fiddler怎么延迟请求，延迟响应？（不是重点）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#urlreplace"><span class="nav-number">5.2.9.</span> <span class="nav-text">urlreplace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%B1%E7%BD%91%E6%B5%8B%E8%AF%95"><span class="nav-number">5.2.10.</span> <span class="nav-text">弱网测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Fiddler-%E5%A6%82%E4%BD%95%E9%99%90%E9%80%9F%EF%BC%9F-%E5%BC%B1%E7%BD%91-%EF%BC%88rules%E8%8F%9C%E5%8D%95%E4%B8%8B%E6%9C%89%E4%B8%AA%E6%A8%A1%E6%8B%9F%E9%99%90%E9%80%9F%E8%8F%9C%E5%8D%95%EF%BC%89"><span class="nav-number">5.2.10.1.</span> <span class="nav-text">Fiddler 如何限速？ 弱网 （rules菜单下有个模拟限速菜单）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%8B%E6%9C%BA%E6%8A%93%E5%8C%85"><span class="nav-number">5.2.11.</span> <span class="nav-text">手机抓包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E5%AF%86"><span class="nav-number">5.2.12.</span> <span class="nav-text">加密</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Charles"><span class="nav-number">5.3.</span> <span class="nav-text">Charles</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%B1%E7%BD%91%E6%B5%8B%E8%AF%95-1"><span class="nav-number">5.3.1.</span> <span class="nav-text">弱网测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B1%E7%BD%91%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3"><span class="nav-number">5.4.</span> <span class="nav-text">弱网测试相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fiddler%EF%BC%8Ccharles%E5%BC%B1%E7%BD%91%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="nav-number">5.4.1.</span> <span class="nav-text">fiddler，charles弱网的缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%B1%E7%BD%91%E6%B5%8B%E8%AF%95%E5%85%B7%E4%BD%93%E7%9A%84%E9%80%9F%E5%BA%A6%E6%98%AF%E5%A4%9A%E5%B0%91%EF%BC%9F"><span class="nav-number">5.4.2.</span> <span class="nav-text">弱网测试具体的速度是多少？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%B1%E7%BD%91%E5%9C%BA%E6%99%AF%E6%98%AF%E6%80%8E%E4%B9%88%E8%80%83%E8%99%91%E7%9A%84%EF%BC%9F-%E6%88%96%E8%80%85%E4%BD%A0%E6%80%8E%E4%B9%88%E8%AE%BE%E8%AE%A1%E5%BC%B1%E7%BD%91%E6%B5%8B%E8%AF%95%EF%BC%9F"><span class="nav-number">5.4.3.</span> <span class="nav-text">弱网场景是怎么考虑的？ 或者你怎么设计弱网测试？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%B1%E7%BD%91%E7%9A%84%E5%85%B6%E4%BB%96%E5%8F%82%E6%95%B0%E6%80%8E%E4%B9%88%E8%AE%BE%E7%BD%AE%EF%BC%9F"><span class="nav-number">5.4.4.</span> <span class="nav-text">弱网的其他参数怎么设置？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF200KB%EF%BC%9F%E8%80%8C%E4%B8%8D%E6%98%AF%E5%85%B6%E4%BB%96%E7%9A%84%E9%80%9F%E5%BA%A6%EF%BC%9F"><span class="nav-number">5.4.5.</span> <span class="nav-text">为什么是200KB？而不是其他的速度？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%B1%E7%BD%91%E4%B8%8B%E4%B8%BB%E8%A6%81%E6%A3%80%E6%9F%A5%E5%93%AA%E4%BA%9B%E6%96%B9%E9%9D%A2%EF%BC%9F"><span class="nav-number">5.4.6.</span> <span class="nav-text">弱网下主要检查哪些方面？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Qnet%E9%99%90%E9%80%9F%E5%B7%A5%E5%85%B7%E6%80%8E%E4%B9%88%E7%94%A8%E7%9A%84"><span class="nav-number">5.4.7.</span> <span class="nav-text">Qnet限速工具怎么用的</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
