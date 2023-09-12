@@ -969,6 +969,27 @@
 <li>再设置线程数模拟多用户，再设置一个压测时间进行性能测试</li>
 <li>最后分析性能测试结果，再写个性能测试报告，大概这个样子</li>
 </ol>
+<h2 id="测完了，性能测试怎么分析的？"><a href="#测完了，性能测试怎么分析的？" class="headerlink" title="测完了，性能测试怎么分析的？"></a>测完了，性能测试怎么分析的？</h2><p>主要是通过每个压测阶段的性能指标的变化来分析的，分析性能指标数据的走势图，我们是通过不断的递增虚拟用户数来增加系统负载测试的，观察系统的性能指标如TPS&#x2F;HPS &#x2F;吞吐量等的变化情况，当负载逐步加大时，曲线图的走势是否和递增的用户数成正比，如成正比就表示被测业务正常，表示还可以增加容量，我们还可以继续加大用户数，随着用户数的加大，指标数值也会跟随变化，如果观察到系统响应时间变长，同时这些指标的数值提升比较缓慢，曲线走势变得平摊，甚至开始下降了，则说明系统遇到瓶颈了，此时对应的虚拟用户数就是业务支持的最大用户数了，大概就这样分析的。 </p>
+<ol>
+<li><p>平均事务响应时间（Average Transaction Response Time）:<br>场景运行期间每秒内的事务执行时所花费的平均时间。时间越小说明系统处理速度越快。（1s内最佳 &#x2F; 3s内一般&#x2F; 5s内最大可接受，5秒以上提单）</p>
+</li>
+<li><p>TPS每秒事务数（Transactions per Second –每个事务都有自己的TPS）：<br>系统每秒内处理事务的最大能力。这个数值越高，说明系统处理能力越强。</p>
+</li>
+<li><p>HPS每秒点击数（Hits per Second—全部接口的，只有1个综合的）：<br>当前负载对系统所产生的点击量记录，是虚拟用户每秒向服务器提交的全部HTTP请求数。 这是数值越高越好，说明系统处理能力强。</p>
+</li>
+<li><p>吞吐量（Throughput）<br>单位时间内通过网卡数据量之和，每秒系统能处理的吞吐量越大，表明系统的性能越好</p>
+</li>
+<li><p>CPU利用率<br>利用率应 &lt; 80%（如果CPU利用率 &gt; 80%，则考虑更换CPU，或减少负载）、或者75%</p>
+</li>
+<li><p>内存利用率（memory）<br>利用率 &lt; 90%（如果内存利用率 &gt; 90%，则加内存）</p>
+</li>
+<li><p>磁盘读写速度—–磁盘读写速度占用时间  Disk IO      磁盘使用时间<br>利用率应 &lt; 30%（高于则换性能更好的磁盘，换读写能力更高—转速更高的磁盘）</p>
+</li>
+<li><p>network网络占用率—- 网卡每秒流量 &#x2F;网络带宽大小，KB &#x2F;sec 每秒流量<br> 一般情况下不能超过设备最大传输能力的 70%（这个是版本2）</p>
+</li>
+<li><p>事务成功率<br>事务成功率我们一般要达到99.5%</p>
+</li>
+</ol>
 <h2 id="Jmeter"><a href="#Jmeter" class="headerlink" title="Jmeter"></a>Jmeter</h2><p>jmeter的接口测试的http请求里面填入的参数比默认值参数优先级要高</p>
 <p>组件位于请求下级，作用范围仅限为该请求</p>
 <p>组件位于请求的上级，作用范围下级的所有请求</p>
@@ -982,12 +1003,40 @@
 <p>Token 放在 cookie（web版）、localStorage本地持久化存储（app）、sessionStorage 会话存储（app）</p>
 <p>也是本地存储，只不过会话完毕后会销毁，当前页面、标签页关闭的时候，自动销毁</p>
 </blockquote>
-<h3 id="参数化有几种方式"><a href="#参数化有几种方式" class="headerlink" title="参数化有几种方式"></a>参数化有几种方式</h3><ol>
-<li>用户参数化</li>
-<li>csv数据文件参数化</li>
-<li>函数助手参数化</li>
-<li>数据库参数化</li>
+<h3 id="参数化有几种方式"><a href="#参数化有几种方式" class="headerlink" title="参数化有几种方式"></a>参数化有几种方式</h3><p>Jmeter参数化一般有4个方式：用户参数、csv文本参数化、函数助手、数据库参数化</p>
+<ol>
+<li>用户参数方式参数化</li>
+<li>csv文本参数化：我们一般通CSV元件来实现的</li>
+<li>函数助手参数化：我们一般是通过Jmeter提供内部函数实现的，比如csvread函数，count计数函数，time函数等</li>
+<li>数据库参数化：是通过JDBC的两个元件来实现，JDBC配置元件用于连接数据库的，JDBC请求元件用户获取数据</li>
 </ol>
+<p>都是使用它们的变量名称替换脚本中静态的值，就可以达到参数化目的。</p>
+<h3 id="jmeter常用函数（参数化）："><a href="#jmeter常用函数（参数化）：" class="headerlink" title="jmeter常用函数（参数化）："></a>jmeter常用函数（参数化）：</h3><p><a href="https://blog.csdn.net/love_user/article/details/126969683">https://blog.csdn.net/love_user/article/details/126969683</a></p>
+<p><img src="/assets/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.assets/QQ%E5%9B%BE%E7%89%8720230912195510.jpg" alt="QQ图片20230912195510"></p>
+<h3 id="为什么要参数化？"><a href="#为什么要参数化？" class="headerlink" title="为什么要参数化？"></a>为什么要参数化？</h3><p>答：因为有些业务场景不能使用同样的固定值，比如登录，比如新增商品的商品名称，那么这时候就要用参数化来处理</p>
+<blockquote>
+<p>前置处理器: 请求前先执行<br>后置处理器：响应后再执行</p>
+</blockquote>
+<h3 id="权限跨线程组"><a href="#权限跨线程组" class="headerlink" title="权限跨线程组"></a>权限跨线程组</h3><p>定义在线程组里面的变量是局部变量，不能跨线程组使用</p>
+<p>定义在线程组外面的变量是全局变量，可以跨线程组使用</p>
+<p>———跨线程组调用———-<br>jmeter本身的内置函数中，函数助手也有这两个函数<br>__setProperty函数：将线程组中的局部变量设置为Jmeter属性（也可以称之为全局变量）<br>可以把某个线程组的参数值设置成jmeter本身的属性，而jmeter的内置属性是所有线程组都可以调用的，相当于是全局变量。</p>
+<p>__P函数： 使用P函数调用相应的全局属性。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$&#123;__setProperty(key,value&#125;</span><br><span class="line">$&#123;__P(key,)&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Beanshell-的使用"><a href="#Beanshell-的使用" class="headerlink" title="Beanshell 的使用"></a>Beanshell 的使用</h3><p>Beanshell是一个脚本语言，Jmeter的beashell原件是一个beashell解释器，是beanshell语法的解释器。是jmeter的扩展功能<br>在测试过程中会遇到一些业务逻辑处理需要，通过单纯的jmeter本身元件的一些参数设置不能满足场景要求，这时候就要使用BeanShell编写一定的脚本来实现这个功能。<br>Jmeter中只要编写代码的就用bellshell组件来写</p>
+<blockquote>
+<p>BeanShell是一种完全符合Java语法的脚本语言，又拥有自己的一些语法和方法</p>
+<p>后置处理器：BeanShell PostProcessor</p>
+<p>只要写代码来满足业务就要用beanshell处理器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//定义jmeter变量，入参只能是String，不能是其它类型</span><br><span class="line">vars.put(String key,String values);</span><br><span class="line"></span><br><span class="line">//从jmeter中获取变量</span><br><span class="line">vars.get(String key);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>吞吐量控制器起分流作用</p>
+<h3 id="jmeter中如何延迟请求？"><a href="#jmeter中如何延迟请求？" class="headerlink" title="jmeter中如何延迟请求？"></a>jmeter中如何延迟请求？</h3><ol>
+<li>添加一个测试活动</li>
+<li>添加一个beanshell处理器，设置思考时间</li>
+</ol>
+<p>JDBC connection 配置元件用户设置数据库连接参数<br>JDBC request 元件 用户查询数据并存入变量中</p>
+<p>其他请求使用改变量即可</p>
 ]]></content>
   </entry>
 </search>
