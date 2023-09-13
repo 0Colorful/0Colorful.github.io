@@ -713,7 +713,7 @@
 </blockquote>
 <h3 id="查看系统状态-top"><a href="#查看系统状态-top" class="headerlink" title="查看系统状态 top"></a>查看系统状态 top</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">adb shell top 		// 动态查看设备cpu和内存占用情况（单个程序） (瞬时占用率） </span><br><span class="line">adb shell top –n 2  //刷新2次</span><br></pre></td></tr></table></figure>
 
-<h3 id="top-命令包含哪些内容"><a href="#top-命令包含哪些内容" class="headerlink" title="top 命令包含哪些内容"></a>top 命令包含哪些内容</h3><p>PID（进程id），user，内存%，cpu%，进程名称，PR（优先级），</p>
+<h3 id="top-命令包含哪些内容"><a href="#top-命令包含哪些内容" class="headerlink" title="top 命令包含哪些内容"></a>top 命令包含哪些内容</h3><p>PID（进程id），user，内存%，cpu%，进程名称，PR（优先级）</p>
 <p><img src="/assets/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.assets/image-20230906183930560-1694003411163-7.png" alt="image-20230906183930560"></p>
 <h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">adb shell ps       // 查看进程列表</span><br><span class="line">adb shell ps|findstr &quot;进程字符串&quot;</span><br></pre></td></tr></table></figure>
 
@@ -1037,6 +1037,43 @@
 </ol>
 <p>JDBC connection 配置元件用户设置数据库连接参数<br>JDBC request 元件 用户查询数据并存入变量中</p>
 <p>其他请求使用改变量即可</p>
+<h2 id="Postman"><a href="#Postman" class="headerlink" title="Postman"></a>Postman</h2><p>pre-request script 前置处理器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pm.globals.set(&quot;variable_key&quot;, &quot;variable_value&quot;); //全局环境变量，作用范围广</span><br><span class="line">pm.environment.set(&quot;variable_key&quot;, &quot;variable_value&quot;); //局部环境变量</span><br></pre></td></tr></table></figure>
+
+<p>当你设置了环境变量的时候，执行测试的时候一定要选择正确的环境</p>
+<p>postman可以自由的切换不同的测试环境</p>
+<p>前置处理器和后置处理器里面调用小眼睛里面定义的环境变量，一定要用get方法，否则会获取失败</p>
+<p>postman的特点，一个断言，算一个通过</p>
+<h3 id="Postman如何获取响应文本？以下两种方法可以"><a href="#Postman如何获取响应文本？以下两种方法可以" class="headerlink" title="Postman如何获取响应文本？以下两种方法可以"></a>Postman如何获取响应文本？以下两种方法可以</h3><ol>
+<li>JSON.parse(responseBody)：responseBody是一个包含响应的全局对象，用于获取响应正文的，需要解析为Json。responseBody不能写错，B要大写，否则提取失败</li>
+<li>pm.response.json()：用于获取响应的json数据，等价于JSON.parse(responseBody)</li>
+</ol>
+<p>正则方式提取：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var mytoken= pm.response.text().match(&quot;\&quot;data\&quot;:\&#123;\&quot;token\&quot;:\&quot;(.*?)\&quot;\&#125;\&#125;&quot;)[1]</span><br><span class="line">pm.environment.set(&quot;mytoken&quot;, mytoken);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>？ 非贪婪模式，找到第一个符合的，就停止搜索，返回搜索结果。<br>不带？:贪婪模式 ，找全部匹配到的</p>
+</blockquote>
+<h3 id="Postman怎么用的？"><a href="#Postman怎么用的？" class="headerlink" title="Postman怎么用的？"></a>Postman怎么用的？</h3><ol>
+<li>Postman主要是做接口测试的，那么我们首先熟悉接口定义文档，包括熟悉接口名称、接口请求方式、接口请求地址、输入参数、返回参数等</li>
+<li>然后我们会写一个接口测试计划</li>
+<li>接着写测试用例</li>
+<li>打开POSTMAN，注册一个用户、再添加一个工作区，在工作区下添加一个测试集，在测试集下添加接口的请求，在输入接口地址，参数等。</li>
+<li>然后在Test窗口加个断言，执行接口测试用例</li>
+<li>如果断言成功，就表明接口是正确的</li>
+<li>再后写个接口测试报告，大概这个样子的</li>
+</ol>
+<h3 id="Postman怎么关联？"><a href="#Postman怎么关联？" class="headerlink" title="Postman怎么关联？"></a>Postman怎么关联？</h3><p>在postman的后置处理器Test编辑框里面写几行代码，一般是将接口返回的响应存入一个变量中，我们返回的一般是json格式，通过key方式将依赖提出来，比如token，再将这个token存入到环境变量中（pm的set方法）,下个接口使用这个环境变量就可以了。</p>
+<h3 id="Postman和jmeter测试的区别？"><a href="#Postman和jmeter测试的区别？" class="headerlink" title="Postman和jmeter测试的区别？"></a>Postman和jmeter测试的区别？</h3><ol>
+<li>Postman需要注册才能使用，jmeter不需要</li>
+<li>Postman测试需要先建一个工作区，再在工作区下建测试集，测试集下添加请求，而jmeter是先有一个测试计划、测试计划下再添加线程组，线程组下添加请求</li>
+<li>Postman请求的请求URL是一个整体，JMeter分成了4个部分（协议、主机、端口、路径），Postman可以在请求中直接填写请求头信息，JMeter需要通过添加HTTP请求头管理器添加请求头</li>
+<li>Postman的参数化或者提取动态值是通过编写函数代码实现的（预请求、Test窗口编写）</li>
+<li>而jmeter仅仅通过组件就可以做参数化和提取动态值了</li>
+<li>postman存储变量是用环境变量的方式存储的，jmeter用组件中的参数形式来存储变量</li>
+<li>Postman比较适合接口测试、postman不仅可以做接口测试，而且能做性能测试</li>
+</ol>
+<p>globals：全局变量 environment：环境变量<br>pm.globals.set()  #设置某个key为全局变量<br>pm.environment.set<br>pm.globals.get()  #获取全局变量<br>pm.environment.get<br>pm.test（）  #断言，包含什么内容</p>
 ]]></content>
   </entry>
 </search>
